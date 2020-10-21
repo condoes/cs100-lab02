@@ -13,12 +13,11 @@ Person::Person(char *name, Person* father, Person* mother){
     capacity = 1;
     numChildren = 0;
     children = new Person*[capacity];
-	delete[] this->name;
-	delete[] children;
 }
 
 Person::~Person(){
     delete[] children;
+	delete[ name;
 }
 
 void Person::addChild(Person *newChild){
@@ -73,10 +72,11 @@ char* Person::compute_relation(int level){
     for(int i = 2; i <= level; i++){
         char *temp2 = new char[strlen("great ") + strlen(temp) + 1];
         strcat(strcpy(temp2, "great "), temp);
-        temp = temp2;
+     delete temp;
+	   temp = temp2;
 	delete temp2;
     }
-	delete temp;
+	
 
     return temp;
 }

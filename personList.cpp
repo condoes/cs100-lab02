@@ -12,9 +12,10 @@ PersonList::PersonList(){
 }
 
 PersonList::~PersonList(){
-	for(int i = 0; i < numPeople; i++) {
-		delete theList;
+	for(int i = numPeople; i >=0; i--) {
+		delete theList[i];
 }
+	delete[] theList;
 }
 
 void PersonList::addPerson(char* child_name, char* father_name, char* mother_name){
@@ -54,9 +55,10 @@ void PersonList::addPerson(char* child_name, char* father_name, char* mother_nam
 }
 
 void PersonList::insertIntoList(Person *newPerson){
-    if(numPeople == capacity) expand(&theList, &capacity);
-
-    theList[numPeople++] = newPerson;
+    if(numPeople == capacity){
+	 expand(&theList, &capacity);
+}
+    theList[numPeople] = newPerson;
 }
 
 void PersonList::printLineage(char* person){
