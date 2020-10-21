@@ -17,7 +17,7 @@ Person::Person(char *name, Person* father, Person* mother){
 
 Person::~Person(){
     delete[] children;
-	delete[ name;
+	delete[] name;
 }
 
 void Person::addChild(Person *newChild){
@@ -57,7 +57,7 @@ void Person::printLineage(char dir, int level){
 	  
    	 }	
     }
-	delete[] temp;
+	delete temp;
 }
 
 /* helper function to compute the lineage

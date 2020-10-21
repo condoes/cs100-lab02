@@ -12,8 +12,8 @@ PersonList::PersonList(){
 }
 
 PersonList::~PersonList(){
-	for(int i = numPeople; i >=0; i--) {
-		delete theList[i];
+	for(int i = numPeople; i >=1; i--) {
+		delete theList[i]->getName();
 }
 	delete[] theList;
 }
@@ -49,9 +49,10 @@ void PersonList::addPerson(char* child_name, char* father_name, char* mother_nam
     father->addChild(newChild);
     mother->addChild(newChild);
 
+	delete newChild;
 	delete father;
 	delete mother;
-	delete newChild;
+	
 }
 
 void PersonList::insertIntoList(Person *newPerson){
